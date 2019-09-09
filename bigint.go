@@ -7,26 +7,27 @@ import (
 	"strings"
 )
 
-func exampleBigInt() {
+// ExampleBigInt 例子
+func ExampleBigInt() {
 	// 字符单位换算表
-	// units := map[string]string{
-	// 	"K": "1000",
-	// 	"M": "1000K",
-	// 	"B": "1000M",
-	// 	"T": "1000B",
-	// 	"q": "1000T",
-	// 	"Q": "1000q",
-	// 	"s": "1000Q",
-	// 	"S": "1000s",
-	// 	"O": "1000S",
-	// 	"N": "1000O",
-	// 	"d": "1000N",
-	// 	"U": "1000d",
-	// 	"D": "1000U",
-	// }
-	// InitUnits(units, 10, 5)
+	units := map[string]string{
+		"K": "1000",
+		"M": "1000K",
+		"B": "1000M",
+		"T": "1000B",
+		"q": "1000T",
+		"Q": "1000q",
+		"s": "1000Q",
+		"S": "1000s",
+		"O": "1000S",
+		"N": "1000O",
+		"d": "1000N",
+		"U": "1000d",
+		"D": "1000U",
+	}
+	InitBigIntUnit(units, 10, 5)
 
-	InitDefaultUnits()
+	// InitDefaultUnits()
 
 	a := NewBigInt("10000000")
 	b := NewBigInt("11300000000")
