@@ -38,8 +38,8 @@ func ExampleBigInt() {
 	fmt.Println(NewBigInt(strNum))
 	fmt.Println(NewBigInt("11300034500000"))
 
-	// fmt.Println(NewBigInt("1130s"))
-	fmt.Println(NewBigInt("1130;2"))
+	fmt.Println(NewBigInt("1130s"))
+	// fmt.Println(NewBigInt("1130;2"))
 
 }
 
