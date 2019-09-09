@@ -4,7 +4,6 @@
 
 
 func exampleBigInt() {
-	// 字符单位换算表
 	units := map[string]string{
 		"K": "1000",
 		"M": "1000K",
@@ -22,8 +21,6 @@ func exampleBigInt() {
 	}
 	InitUnits(units, 10, 5)
 
-	// InitDefaultUnits()
-
 	a := NewBigInt("10000000")
 	b := NewBigInt("11300000000")
 	b.Mul(b, a)
@@ -34,6 +31,5 @@ func exampleBigInt() {
 	fmt.Println(NewBigInt("11300034500000"))
 
 	fmt.Println(NewBigInt("1130s"))
-	// fmt.Println(NewBigInt("1130;2"))
 
 }
