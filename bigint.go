@@ -231,9 +231,8 @@ func InitBigIntUnit(unitsTable map[string]string, base, signDigit int) {
 func ParseUnit(u string) string {
 	if v, ok := uc.units[u]; ok {
 		return v
-	} else {
-		return "1"
 	}
+	return "1"
 }
 
 // FormatUnit 将大数字格式化为带单位的数值
@@ -265,12 +264,12 @@ func format2CharUnit(bigInt *big.Int) string {
 		numWithUnit := num[0 : lenOfNum-lenOfUnit+1]
 		numWithUnit += unit
 		return numWithUnit
-	} else {
-		d := NewBigInt(digit)
-		bigInt.Div(bigInt, d)
-		strNum := bigInt.String()
-		return strNum + unit
 	}
+
+	d := NewBigInt(digit)
+	bigInt.Div(bigInt, d)
+	strNum := bigInt.String()
+	return strNum + unit
 }
 
 func format2DigitalUnit(bigInt *big.Int) string {
@@ -291,12 +290,12 @@ func format2DigitalUnit(bigInt *big.Int) string {
 		numWithUnit := num[0 : lenOfNum-lenOfUnit+1]
 		numWithUnit += ";" + unit
 		return numWithUnit
-	} else {
-		d := NewBigInt(digit)
-		bigInt.Div(bigInt, d)
-		strNum := bigInt.String()
-		return strNum + ";" + unit
 	}
+
+	d := NewBigInt(digit)
+	bigInt.Div(bigInt, d)
+	strNum := bigInt.String()
+	return strNum + ";" + unit
 }
 
 // 递归解析带单位的数值、转为无单位数字
